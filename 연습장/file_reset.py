@@ -1,4 +1,4 @@
-files = ["input.txt", "output.txt", "출력예시.txt", "test.py"]
+files = ["연습장/input.txt", "연습장/output.txt", "연습장/출력예시.txt", "연습장/test.py"]
 
 for file in files:
     with open(file, "w") as f:
