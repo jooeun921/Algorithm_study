@@ -1,15 +1,10 @@
-import sys 
-N = int(sys.stdin.readline().rstrip())
-dic = {}
+import sys
+N = int(sys.stdin.readline())
+cnt = [0]*10001
 for _ in range(N):
-    X =int(sys.stdin.readline().rstrip())   
-    if X in dic:
-        dic[X] += 1
-    else:
-        dic[X] = 1
-for i in range(max(dic.keys())+1):
-    if i not in dic:
-        continue
-    else:
-        for _ in range(dic[i]):
+    cnt[int(sys.stdin.readline())] += 1
+
+for i in range(1, 10001):
+    if cnt[i] != 0:
+        for _ in range(cnt[i]):
             print(i)
