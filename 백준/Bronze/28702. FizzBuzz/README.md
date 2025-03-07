@@ -1,6 +1,6 @@
-# [Bronze I] FizzBuzz - 28702 
+# [Bronze I] FizzBuzz - 28702
 
-[문제 링크](https://www.acmicpc.net/problem/28702) 
+[문제 링크](https://www.acmicpc.net/problem/28702)
 
 ### 성능 요약
 
@@ -27,11 +27,17 @@
 
 <p>FizzBuzz 문제에서 연속으로 출력된 세 개의 문자열이 주어집니다. 이때, 이 세 문자열 다음에 올 문자열은 무엇일까요?</p>
 
-### 입력 
+### 입력
 
  <p>FizzBuzz 문제에서 연속으로 출력된 세 개의 문자열이 한 줄에 하나씩 주어집니다. 각 문자열의 길이는 <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c38"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>8</mn></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$8$</span></mjx-container> 이하입니다. 입력이 항상 FizzBuzz 문제에서 연속으로 출력된 세 개의 문자열에 대응됨이 보장됩니다.</p>
 
-### 출력 
+### 출력
 
  <p>연속으로 출력된 세 개의 문자열 다음에 올 문자열을 출력하세요. 여러 문자열이 올 수 있는 경우, 아무거나 하나 출력하세요.</p>
 
+### 메모
+
+잘 생각해보면, 연속으로 출력되는 문자열 세 개 중 하나는 무조건 정수 i가 들어있다는 것을 알 수 있다.
+그렇다면 그 정수의 위치를 찾는 것이 중요할 것이다.
+
+i.isdigit() -> 값이 숫자인지 확인하는 함수. 모든 문자가 숫자로 이루어져 있는 경우 True를 반환한다.
