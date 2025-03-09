@@ -1,6 +1,6 @@
-# [Silver IV] 카드2 - 2164 
+# [Silver IV] 카드2 - 2164
 
-[문제 링크](https://www.acmicpc.net/problem/2164) 
+[문제 링크](https://www.acmicpc.net/problem/2164)
 
 ### 성능 요약
 
@@ -24,11 +24,27 @@
 
 <p>N이 주어졌을 때, 제일 마지막에 남게 되는 카드를 구하는 프로그램을 작성하시오.</p>
 
-### 입력 
+### 입력
 
  <p>첫째 줄에 정수 N(1 ≤ N ≤ 500,000)이 주어진다.</p>
 
-### 출력 
+### 출력
 
  <p>첫째 줄에 남게 되는 카드의 번호를 출력한다.</p>
 
+### 메모
+
+처음에는 리스트 pop을 활용해보려고 했음. 근데 반례 테스트에서 시간초과가 떴음.
+list에서 pop 연산은 O(N) 소요.
+그러나 deque를 활용하면 O(1) 임.
+
+따라서,
+
+from collections import deque
+
+popleft()
+append()
+appendleft()
+insert()
+rotate()
+등등, list 함수와 비슷하면서도 다른 부분이 있으므로 이거 유의하기
