@@ -1,6 +1,6 @@
-# [Silver III] 통계학 - 2108 
+# [Silver III] 통계학 - 2108
 
-[문제 링크](https://www.acmicpc.net/problem/2108) 
+[문제 링크](https://www.acmicpc.net/problem/2108)
 
 ### 성능 요약
 
@@ -27,11 +27,11 @@
 
 <p>N개의 수가 주어졌을 때, 네 가지 기본 통계값을 구하는 프로그램을 작성하시오.</p>
 
-### 입력 
+### 입력
 
  <p>첫째 줄에 수의 개수 N(1 ≤ N ≤ 500,000)이 주어진다. 단, N은 홀수이다. 그 다음 N개의 줄에는 정수들이 주어진다. 입력되는 정수의 절댓값은 4,000을 넘지 않는다.</p>
 
-### 출력 
+### 출력
 
  <p>첫째 줄에는 산술평균을 출력한다. 소수점 이하 첫째 자리에서 반올림한 값을 출력한다.</p>
 
@@ -41,3 +41,19 @@
 
 <p>넷째 줄에는 범위를 출력한다.</p>
 
+### 메모
+
+다른 건 별로 어렵지 않은데, 최빈값 부분이 좀 생각할 게 많음!
+리스트로 주어졌을 때 Counter 함수를 사용해서 dictionary로 각 수의 빈도를 계산할 수 있음.
+형태는 {'주어진 숫자':'빈도수'} 임.
+
+from collections import Counter
+
+최빈값. 여러 개 있을 때에는 최빈값 중 두 번째로 작은 값을 출력한다.
+counter = Counter(num_list)
+
+sorted를 사용해서, 첫번째 기준은 빈도수 대로 내림차순 정렬 -x[1], 두번째 기준인 key 오름차순 정렬 x[0]임.
+counter_list = sorted(counter.items(), key=lambda x: (-x[1], x[0]))
+
+마지막에 출력할 때, 빈도 리스트가 1개 이상(동일한 숫자로만 쭉 나왔을 경우에 대처 필요 out of range 오류 발생하므로), 첫번째랑 두번째 값의 빈도수가 동일하면 [1][0] 출력한다!
+print(counter_list[1][0] if (len(counter_list) > 1 and counter_list[0][1]==counter_list[1][1]) else counter_list[0][0])
