@@ -1,6 +1,6 @@
-# [Silver IV] solved.ac - 18110 
+# [Silver IV] solved.ac - 18110
 
-[문제 링크](https://www.acmicpc.net/problem/18110) 
+[문제 링크](https://www.acmicpc.net/problem/18110)
 
 ### 성능 요약
 
@@ -37,13 +37,18 @@
 
 <p>사용자들이 어떤 문제에 제출한 난이도 의견 목록이 주어질 때, solved.ac가 결정한 문제의 난이도를 계산하는 프로그램을 작성하시오.</p>
 
-### 입력 
+### 입력
 
  <p>첫 번째 줄에 난이도 의견의 개수 <em>n</em>이 주어진다. (0 ≤ <em>n</em> ≤ 3 × 10<sup>5</sup>)</p>
 
 <p>이후 두 번째 줄부터 1 + <em>n</em>번째 줄까지 사용자들이 제출한 난이도 의견 <em>n</em>개가 한 줄에 하나씩 주어진다. 모든 난이도 의견은 1 이상 30 이하이다.</p>
 
-### 출력 
+### 출력
 
  <p>solved.ac가 계산한 문제의 난이도를 출력한다.</p>
 
+### 메모
+
+python의 round 함수는 1.5를 1로 반환한다.
+따라서, 이번 문제에서의 반올림을 위해서는 round가 아니라 따로 사사오입을 만들어줘야 함.
+int(avg) if avg - int(avg) < 0.5 else int(avg + 1) 로 설정하기!
