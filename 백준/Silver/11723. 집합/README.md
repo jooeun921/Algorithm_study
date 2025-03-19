@@ -1,4 +1,4 @@
-# [Silver V] 집합 - 11723
+# [Silver V] 집합 - 11723 '⭐⭐⭐⭐⭐'
 
 [문제 링크](https://www.acmicpc.net/problem/11723)
 

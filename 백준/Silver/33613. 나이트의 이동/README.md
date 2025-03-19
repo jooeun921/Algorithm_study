@@ -1,4 +1,4 @@
-# [Silver III] 나이트의 이동 - 33613
+# [Silver III] 나이트의 이동 - 33613 '⭐⭐⭐⭐⭐'
 
 [문제 링크](https://www.acmicpc.net/problem/33613)
 
