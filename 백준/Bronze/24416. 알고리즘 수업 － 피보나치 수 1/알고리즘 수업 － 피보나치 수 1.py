@@ -9,3 +9,14 @@ def 동적_횟수(n):
 
 n = int(input())
 print(재귀_횟수(n), 동적_횟수(n))
+
+# 재귀횟수 계산하는 다른 풀이.
+# import sys
+
+# input = sys.stdin.readline
+
+# n = int(input())
+# a, b = 0, 1
+# for _ in range(n):
+#     a, b = b, a + b
+# print(a, n - 2)
