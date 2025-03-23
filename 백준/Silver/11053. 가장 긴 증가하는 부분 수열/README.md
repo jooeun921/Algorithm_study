@@ -1,6 +1,6 @@
-# [Silver II] 가장 긴 증가하는 부분 수열 - 11053 
+# [Silver II] 가장 긴 증가하는 부분 수열 - 11053 '⭐⭐⭐⭐⭐❣️'
 
-[문제 링크](https://www.acmicpc.net/problem/11053) 
+[문제 링크](https://www.acmicpc.net/problem/11053)
 
 ### 성능 요약
 
@@ -20,13 +20,31 @@
 
 <p>예를 들어, 수열 A = {10, 20, 10, 30, 20, 50} 인 경우에 가장 긴 증가하는 부분 수열은 A = {<strong>10</strong>, <strong>20</strong>, 10, <strong>30</strong>, 20, <strong>50</strong>} 이고, 길이는 4이다.</p>
 
-### 입력 
+### 입력
 
  <p>첫째 줄에 수열 A의 크기 N (1 ≤ N ≤ 1,000)이 주어진다.</p>
 
 <p>둘째 줄에는 수열 A를 이루고 있는 A<sub>i</sub>가 주어진다. (1 ≤ A<sub>i</sub> ≤ 1,000)</p>
 
-### 출력 
+### 출력
 
  <p>첫째 줄에 수열 A의 가장 긴 증가하는 부분 수열의 길이를 출력한다.</p>
 
+### 메모
+
+DP 또는 이진탐색으로 풀 수 있다.
+
+- DP의 경우에는, 리스트를 이중 반복문으로 받아서 현재 i 위치의 인덱스 값이 이전 인덱스보다 작으면(증가하면) 리스트의
+  if int(Ai[i]) > int(Ai[j]):
+  dp[i] = max(int(dp[i]), int(dp[j]+1))
+  이런 식으로 현재 dp i 값(1로 초기화되어 있음)이랑 dp[j]+1 이전에서 +1 된 값 사이에 비교함.
+  그 뒤에 dp로 저장된 값들 중에서 가장 큰 값이 가장 긴 증가하는 부분 수열의 길이가 된다.
+
+- 이진탐색 방식
+  이진탐색 bisect_left는 리스트 내에서 i 위치가 있어야 하는 리스트에서의 인덱스 왼쪽값을 반환해준다.
+  이때, idx == temp 의 길이가 같으면(처음 temp는 빈리스트 선언.) -> temp에 append 를 하고, 아니면 temp의 idx 위치에 i를 할당해준다.
+  idx = bisect_left(temp, i)
+  if idx == len(temp):
+  temp.append(i)
+  else:
+  temp[idx] = i
