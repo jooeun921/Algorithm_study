@@ -1,4 +1,4 @@
-# [Silver V] 색종이 - 2563 '⭐⭐❣️'
+# [Silver V] 색종이 - 2563 '⭐⭐'❣️'
 
 [문제 링크](https://www.acmicpc.net/problem/2563)
 

@@ -1,4 +1,4 @@
-# [Bronze II] 진법 변환 - 2745 '⭐❣️'
+# [Bronze II] 진법 변환 - 2745 '⭐'❣️'
 
 [문제 링크](https://www.acmicpc.net/problem/2745)
 
