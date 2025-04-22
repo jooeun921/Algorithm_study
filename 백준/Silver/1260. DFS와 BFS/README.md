@@ -28,33 +28,34 @@
 
 ### 메모
 
-깊이우선탐색(DFS)와 너비우선탐색(BFS)의 개념과 구현 방법을 알면 풀 수 있다!
-깊이우선탐색은 재귀 or stack을 활용하여 구현할 수 있다. 단 stack의 경우에는 extend와 reversed 활용하여 그 위치의 인덱스 값을 뒤집어서 전부 넣는다.
-너비우선탐색은 deque를 활용하여 구현할 수 있다. 해당 리스트 내의 값을 전부 넣는다.
+깊이 우선 탐색(DFS)와 너비 우선 탐색(BFS)의 개념과 구현 방법을 알면 풀 수 있는 문제이다.
 
-처음 주어진 값을 가지고 graph를 만들 때
+#### DFS (깊이 우선 탐색)
+- **구현 방법**: 재귀 또는 스택 활용
+- **스택 사용 시 팁**: `extend`와 `reversed`를 활용하여 인덱스 값을 뒤집어서 삽입
 
-1. 간선에 따라 양방향 간선, 단방향 간선
-2. dictionary, 2차원 list 모두 가능함!
+#### BFS (너비 우선 탐색)
+- **구현 방법**: `deque` 활용
+- **큐 사용 시 팁**: 리스트 내의 값을 전부 삽입하여 탐색
 
-```
-edges = [list(map(int, stdin.readline().split())) for _ in range(M)]
-
-1. 딕셔너리
-graph = {}  # 빈 딕셔너리 생성
-
-for a, b in edges: # 처음에 key가 없을 수도 있기 때문에 -> 없는 경우에 key를 a로 하고 그 뒤에 value b를 넣어준다.
-    graph.setdefault(a, []).append(b)
-    graph.setdefault(b, []).append(a)
-
-# 노드별 인접 리스트 정렬 (필요하면)
-for key in graph:
-    graph[key].sort()  # 정렬해서 탐색 순서 일정하게게
-
-2. 리스트
-graph = [[] for _ in range(N+1)] # 빈 2차원 리스트 만들기
-for a, b in edges:
-    graph[a].append(b)
-    graph[b].append(a)
-graph = list(map(sorted, graph))
-```
+#### 그래프 생성 방법
+1. **양방향 간선 처리**
+2. **그래프 표현 방식**
+   - **딕셔너리**:
+     ```python
+     graph = {}  # 빈 딕셔너리 생성
+     for a, b in edges:
+         graph.setdefault(a, []).append(b)
+         graph.setdefault(b, []).append(a)
+     # 노드별 인접 리스트 정렬 (필요 시)
+     for key in graph:
+         graph[key].sort()
+     ```
+   - **2차원 리스트**:
+     ```python
+     graph = [[] for _ in range(N+1)]  # 빈 2차원 리스트 생성
+     for a, b in edges:
+         graph[a].append(b)
+         graph[b].append(a)
+     graph = list(map(sorted, graph))  # 정렬하여 탐색 순서 일정하게
+     ```
