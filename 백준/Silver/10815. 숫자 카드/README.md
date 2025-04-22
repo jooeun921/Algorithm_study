@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # [Silver V] 숫자 카드 - 10815 '⭐'
-=======
-# [Silver V] 숫자 카드 - 10815
->>>>>>> 1822771fd43ce0fc20e6faba4520faec84b825b7
 
 [문제 링크](https://www.acmicpc.net/problem/10815)
 
