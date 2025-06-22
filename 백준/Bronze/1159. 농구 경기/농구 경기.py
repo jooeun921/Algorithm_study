@@ -1,18 +1,15 @@
-from sys import stdin
 from collections import defaultdict
 
-n = int(stdin.readline())
+N = int(input())
+name_list = defaultdict(int)
 
-name_dict = defaultdict(int)
+for _ in range(N):
+    name = input()
+    name_list[name[0]] += 1
 
-for _ in range(n):
-    name = stdin.readline()
-    first_letter = name[0]
-    name_dict[first_letter] += 1
+ans = sorted([char for char, count in name_list.items() if count >= 5])
 
-result = [i for i in sorted(name_dict) if name_dict[i] >= 5]
-
-if result:
-    print(*result, sep='')
-else:
+if not ans:
     print("PREDAJA")
+else:
+    print(''.join(ans))
